@@ -11,10 +11,11 @@ html {
 }
 
 body {
- 			min-height: 100vh;
+    min-height: 100vh;
     background-color: #c8cfdb;
     color: #333;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Container */
@@ -22,7 +23,7 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px;;
 }
 
 /* Navbar Styles */
@@ -90,13 +91,13 @@ body {
 /* Hero Section */
 .hero {
     margin-top: 24px;
- 			margin-bottom: -35px;
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400"><rect width="800" height="400" fill="%234a6ea9"/><path d="M0,200 Q200,100 400,200 T800,200" stroke="%23f7d53b" stroke-width="10" fill="none"/></svg>'); */
+   margin-bottom: -35px;
     background-image: url(./bg.jpeg); 
- 			background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     background-position: center;
-    height: 500px;
+    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,8 +105,8 @@ body {
     color: #042B75;
     text-shadow: 1px 1px 2px white;
     padding: 0 20px;
-    position: relative;
-    width: 100%;
+    position: relative; /* Add this */
+    width: 100%; /* Add this */
 }
 
 .hero-content {
@@ -573,13 +574,15 @@ body {
     .hamburger {
         display: block;
     }
-    
     .hero {
-        height: 100vh;
-        width: 100vw;
-        margin: 0;
-        background-attachment: fixed;
+        height: 100vh; /* Change from 400px to 100vh */
+        width: 100vw; /* Add this */
+        margin: 0; /* Add this */
+        background-attachment: fixed; /* Add this for better mobile appearance */
     }
+    /* .hero {
+        height: 400px;
+    } */
     
     .hero h2 {
         font-size: 2rem;
