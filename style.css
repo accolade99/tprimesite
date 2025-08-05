@@ -19,7 +19,7 @@ body {
 }
 /* Alert Dialogue box */
 .custom-dialog {
-    background-color: #e6efffbe;
+    background-color: #e6efffea;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -754,5 +754,6 @@ body {
 }
 
  
+
 
 
