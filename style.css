@@ -629,6 +629,19 @@ body {
     .hero p {
         font-size: 1rem;
     }
+    .tosin img{
+        width: 220px;
+        height: 300px;
+        margin: -20px auto 20px;
+
+    }
+    .tosin p{
+        font-size: 1rem;
+        margin-top: 1rem;
+        line-height: 1.5;
+
+    }
+
 
     .section-title {
         font-size: 1.8rem;
@@ -685,3 +698,4 @@ body {
 }
 
  
+
