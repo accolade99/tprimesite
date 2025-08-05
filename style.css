@@ -17,6 +17,41 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+/* Alert Dialogue box */
+.custom-dialog {
+    background-color: #ffffffc4;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    position: fixed; /* Crucial for positioning */
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the dialog */
+    z-index: 1000; /* Ensures it's on top */
+    max-width: 300px;
+  }
+
+  .custom-dialog h2 {
+    color: #4a6ea9;
+    font-size:large;
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+
+  .custom-dialog p {
+    margin-bottom: 15px;
+    
+  }
+  .custom-dialog button {
+    padding: 8px 15px;
+    background-color: #f7d53b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
 
 /* Container */
 .container {
@@ -567,6 +602,24 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    .custom-dialog {
+    top: 24%;
+    height: 10rem;
+    line-height: 1.2;
+   }
+    .custom-dialog h2 {
+    color: #4a6ea9;
+    font-size: medium;
+    line-height: 1;
+    margin-top: -5px;
+  }
+    .custom-dialog p {
+    font-size: small;
+  }
+    .custom-dialog button {
+    padding: 4px 8px;
+    margin-top: -3px;
+  }
     .navbar-container {
         padding: 1rem;
     }
@@ -642,7 +695,6 @@ body {
 
     }
 
-
     .section-title {
         font-size: 1.8rem;
     }
@@ -656,6 +708,10 @@ body {
     }
     .newsletter-form {
         flex-direction: column;
+      }
+      .newsletter-title{
+        font-size: 1.5rem;
+        margin-bottom: 10px;
       }
 
       .newsletter-input {
@@ -698,4 +754,3 @@ body {
 }
 
  
-
