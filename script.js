@@ -68,7 +68,7 @@ window.onload = function() {
             
             // In a real implementation, you would send this data to a server
             // For now, just show an alert
-            alert('Thank you for your interest in Sunshine Primary School! Our admissions team will contact you shortly.');
+            alert('Thank you for contacting T-Prime! Our team lead will contact you shortly.');
             inquiryForm.reset();
         });
 
@@ -125,4 +125,5 @@ window.onload = function() {
         // Run animation check on load and scroll
         window.addEventListener('load', animateOnScroll);
         window.addEventListener('scroll', animateOnScroll);
+
 
