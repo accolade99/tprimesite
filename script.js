@@ -1,3 +1,21 @@
+    // Alert Dialog Functionality
+function showCustomDialog(message) {
+  const dialog = document.getElementById('dialog');
+  dialog.innerHTML = `<h2>FREE 5-DAY EMAIL COURSE!</h2><p>${message}</p><button onclick="hideDialog()">OK</button>`;
+  dialog.style.display = 'block';
+}
+
+function hideDialog() {
+  const dialog = document.getElementById('dialog');
+  dialog.style.display = 'none';
+}
+
+// Show the dialog automatically after 3 seconds
+window.onload = function() {
+  setTimeout(function() {
+    showCustomDialog('FINANCE FOR FOUNDERS. 5 days to take control of your business numbers- like a CFO.<br>Sign up now to get started!');
+  }, 3000);
+};
 
         // Mobile Menu Toggle
         const hamburger = document.querySelector('.hamburger');
@@ -107,3 +125,4 @@
         // Run animation check on load and scroll
         window.addEventListener('load', animateOnScroll);
         window.addEventListener('scroll', animateOnScroll);
+
