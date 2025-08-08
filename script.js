@@ -1,21 +1,53 @@
-    // Alert Dialog Functionality
-function showCustomDialog(message) {
-  const dialog = document.getElementById('dialog');
-  dialog.innerHTML = `<h2>FREE 5-DAY EMAIL COURSE!</h2><p>${message}</p><button onclick="hideDialog()">OK</button>`;
-  dialog.style.display = 'block';
-}
 
-function hideDialog() {
-  const dialog = document.getElementById('dialog');
-  dialog.style.display = 'none';
-}
+// alert box functionality
+     document.addEventListener('DOMContentLoaded', function() {
+            // Show the newsletter alert after 3 seconds
+            setTimeout(function() {
+                document.getElementById('newsletter-alert').classList.remove('hidden');
+            }, 3000);
 
-// Show the dialog automatically after 3 seconds
-window.onload = function() {
-  setTimeout(function() {
-    showCustomDialog('FINANCE FOR FOUNDERS. 5 days to take control of your business numbers- like a CFO.<br>Sign up now to get started!');
-  }, 3000);
-};
+            // Subscribe Now button
+            document.getElementById('subscribe-now-btn').addEventListener('click', function() {
+                // Hide the alert
+                document.getElementById('newsletter-alert').classList.add('hidden');
+                
+                // Scroll to the subscription form
+                document.getElementById('subscription-form').scrollIntoView({ behavior: 'smooth' });
+                
+                // Optional: Focus on the first input field
+                setTimeout(function() {
+                    document.getElementById('name').focus();
+                }, 800);
+            });
+
+            // Ask Me Later button
+            document.getElementById('ask-later-btn').addEventListener('click', function() {
+                document.getElementById('newsletter-alert').classList.add('hidden');
+                
+                // Could set a cookie/localStorage to remember the user's choice
+                localStorage.setItem('newsletter_asked', 'true');
+            });
+
+            // Form submission
+            document.getElementById('subscription-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                
+                // In a real application, you would send this data to your server
+                console.log('Subscription submitted:', { name, email });
+                
+                // Show a success message (in a real app)
+                alert('Thank you for subscribing to our newsletter!');
+                
+                // Reset the form
+                this.reset();
+            });
+        });
+    
+
+
 
         // Mobile Menu Toggle
         const hamburger = document.querySelector('.hamburger');
@@ -68,7 +100,7 @@ window.onload = function() {
             
             // In a real implementation, you would send this data to a server
             // For now, just show an alert
-            alert('Thank you for contacting T-Prime! Our team lead will contact you shortly.');
+            alert('Thank you for your your interest in T-Prime. Our team lead will contact you shortly.');
             inquiryForm.reset();
         });
 
@@ -125,5 +157,3 @@ window.onload = function() {
         // Run animation check on load and scroll
         window.addEventListener('load', animateOnScroll);
         window.addEventListener('scroll', animateOnScroll);
-
-
