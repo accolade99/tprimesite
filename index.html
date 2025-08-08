@@ -13,10 +13,22 @@
 <body>
     <!-- #CAAA9B -->
      <!-- #042B75   #0090D0 -->
+
+    <!-- Newsletter Alert -->
+    <div class="alert-overlay hidden" id="newsletter-alert">
+        <div class="alert-box">
+            <h3 class="alert-title">FREE 5-DAY EMAIL COURSE!</h3>
+            <p class="alert-message">FINANCE FOR FOUNDERS. 5 days to take control of your business numbers- like a CFO.<br>Subscribe now to get started!</p>
+            <div class="alert-buttons">
+                <button class="subscribe-btn" id="subscribe-now-btn">Subscribe Now</button>
+                <button class="later-btn" id="ask-later-btn">Ask Me Later</button>
+            </div>
+        </div>
+    </div>
+
+     <!-- <div id="dialog" class="custom-dialog" style="display: none;"> </div> -->
+
     <!-- Navbar -->
-    <!-- Alert Dialogue box -->
-     <div id="dialog" class="custom-dialog" style="display: none;"> </div>
-    
     <nav class="navbar">
         <div class="container navbar-container">
             <div class="logo">
@@ -149,13 +161,6 @@
         <div class="container">
             <h2 class="section-title">Fix an Appointment</h2>
             <div class="admission-content">
-                <!-- <div class="admission-text">
-                    <h3>Admission Process</h3>
-                    <p>We welcome applications from families who share our educational philosophy and are looking for a nurturing environment for their children.</p>
-                    <p>Our admission process is designed to ensure that Home Science Association is the right fit for your child and family. We consider each application carefully, looking beyond academic readiness to a child's curiosity, character, and potential.</p>
-                    <p>Complete the inquiry form to start your journey with us. Our admissions team will contact you to schedule a school tour and provide more information about the next steps.</p>
-                    <p><strong>Now accepting applications for the 2025-2026 academic year.</strong></p>
-                </div> -->
                 
                 <div class="admission-form">
                     <h3>Contact Form</h3>
@@ -210,18 +215,21 @@
                 </div>
             </div>
 
-            <!-- Newsletter Section -->
-  <section class="newsletter" id="subscribe">
-    <div class="container animate-zoom">
-      <h2 class="newsletter-title">SUBSCRIBE TO OUR 5-DAY FREE EMAIL COURSE TODAY. </h2>
-      <p class="newsletter-description">Stay updated with the latest financial insights, tax updates, and accounting tips to help your business thrive.</p>
-      <form class="newsletter-form">
-        <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
-        <button type="submit" class="newsletter-button">Subscribe</button>
-      </form>
+  <form id="subscription-form">
+            <h2>SUBSCRIBE TO OUR 5-DAY FREE EMAIL COURSE TODAY</h2>
+            <!-- <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div> -->
+            <p class="newsletter-description">Stay updated with the latest financial insights, tax updates, and accounting tips to help your business thrive.</p>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit">Subscribe</button>
+        </form>
     </div>
-  </section>
-            
+        
             <div class="footer-bottom">
                 <p>&copy; Dandy Ama. All rights reserved.</p>
             </div>
@@ -231,6 +239,3 @@
     <script src="./script.js"></script>
 </body>
 </html>
-
-
-
