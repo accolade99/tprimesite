@@ -88,7 +88,7 @@
 
 // EmailJS initialization with Public Key here instead of HTML
 (function() {
-  emailjs.init("KKki9S38viM26emph"); // Replace with your EmailJS Public Key
+  emailjs.init("Your_public_key"); // Replace with your EmailJS Public Key
 })();
 
 document.getElementById("inquiryForm").addEventListener("submit", function(e) {
@@ -136,7 +136,7 @@ document.getElementById("inquiryForm").addEventListener("submit", function(e) {
 
   // Send email via EmailJS
     
-  emailjs.send("service_06x3b2p", "template_6d3k5yd", templateParams)
+  emailjs.send("Your_service_id", "Your_template_ID", templateParams)
     .then(() => {
       formMessage.textContent = "✅ Your message has been sent successfully!";
       formMessage.className = "success";
