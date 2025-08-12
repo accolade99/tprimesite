@@ -28,22 +28,22 @@
                 localStorage.setItem('newsletter_asked', 'true');
             });
 
-            // Form submission
-            document.getElementById('subscription-form').addEventListener('submit', function(e) {
-                e.preventDefault();
+            // // Form submission
+            // document.getElementById('subscription-form').addEventListener('submit', function(e) {
+            //     e.preventDefault();
                 
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
+            //     const name = document.getElementById('name').value;
+            //     const email = document.getElementById('email').value;
                 
-                // In a real application, you would send this data to your server
-                console.log('Subscription submitted:', { name, email });
+            //     // In a real application, you would send this data to your server
+            //    // console.log('Subscription submitted:', { name, email });
                 
-                // Show a success message (in a real app)
-                alert('Thank you for subscribing to our newsletter!');
+            //     // Show a success message (in a real app)
+            //     //alert('Thank you for subscribing to our newsletter!');
                 
-                // Reset the form
-                this.reset();
-            });
+            //     // Reset the form
+            //     this.reset();
+            // });
         });
     
 
@@ -92,17 +92,17 @@
             updateSlider();
         }, 10000);
 
-        // Form submission
-        const inquiryForm = document.getElementById('inquiryForm');
+        // // Form submission
+        // const inquiryForm = document.getElementById('inquiryForm');
         
-        inquiryForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        // inquiryForm.addEventListener('submit', (e) => {
+        //     e.preventDefault();
             
-            // In a real implementation, you would send this data to a server
-            // For now, just show an alert
-            alert('Thank you for your your interest in T-Prime. Our team lead will contact you shortly.');
-            inquiryForm.reset();
-        });
+        //     // In a real implementation, you would send this data to a server
+        //     // For now, just show an alert
+        //     alert('Thank you for your your interest in T-Prime. Our team lead will contact you shortly.');
+        //     inquiryForm.reset();
+        // });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
