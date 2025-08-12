@@ -17,6 +17,39 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
+/* Alert Dialogue box */
+.custom-dialog {
+  background-color: #e6efffea;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  position: fixed; /* Crucial for positioning */
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the dialog */
+  z-index: 1000; /* Ensures it's on top */
+  max-width: 300px;
+}
+
+.custom-dialog h2 {
+  color: #4a6ea9;
+  font-size: large;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.custom-dialog p {
+  margin-bottom: 15px;
+}
+.custom-dialog button {
+  padding: 8px 15px;
+  background-color: #042b75;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 /* Container */
 .container {
@@ -148,6 +181,7 @@ body {
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
+
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .cta-button a {
@@ -493,118 +527,56 @@ body {
   border-top: 1px solid #6d6b6b;
 }
 
-/* Subscription Form Styles */
-#subscription-form {
-  background-color: white;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  scroll-margin-top: 30px;
-}
-
-#subscription-form h2 {
-  color: #042b75;
-  margin-bottom: 10px;
+/* added */
+/* Newsletter Section */
+.newsletter {
+  background: #1045a8;
+  color: white;
   text-align: center;
-  line-height: 1;
+  padding: 20px 0;
 }
 
-.form-group {
-  margin: 10px 10px;
+.newsletter-title {
+  font-size: 2rem;
+  line-height: 30px;
+  font-weight: 700;
+  margin: 10px;
+  color: #ee8656;
 }
+
 .newsletter-description {
   max-width: 600px;
-  margin: 0 auto 10px;
+  margin: 0 auto 30px;
   opacity: 0.9;
-  color: black;
-  text-align: center;
 }
 
-label {
-  display: block;
-  margin-bottom: 8px;
-  color: #333;
+.newsletter-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-input[type="text"],
-input[type="email"] {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+.newsletter-input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 4px 0 0 4px;
   font-size: 1rem;
 }
 
-button {
-  background-color: #4a6ea9;
+.newsletter-button {
+  background-color: #042b75;
   color: white;
   border: none;
-  padding: 12px 24px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
+  border-radius: 0 4px 4px 0;
+  padding: 0 25px;
   font-weight: 600;
-  transition: background-color 0.3s;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #2980b9;
-}
-
-/* Newsletter Alert Styles */
-.alert-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.alert-box {
-  background-color: #e6efffd5;
-  padding: 30px;
-  border-radius: 8px;
-  max-width: 350px;
-  width: 80%;
-  text-align: center;
-}
-.hidden {
-  display: none;
-}
-
-.alert-title {
-  font-size: large;
-  margin: -15px auto 5px;
-  color: #042b75;
-}
-
-.alert-message {
-  margin-bottom: 25px;
-  color: black;
-  line-height: 1.2;
-}
-
-.alert-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.subscribe-btn {
-  background-color: #3498db;
-  padding: 7px 10px;
-}
-
-.later-btn {
-  background-color: #95a5a6;
-  padding: 7px 10px;
+.newsletter-button:hover {
+  background-color: #03235f;
 }
 
 /* Animations */
@@ -622,26 +594,24 @@ button:hover {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  /* alert box responsiveness */
-  .alert-buttons {
-    flex-direction: column;
-    gap: 10px;
+  .custom-dialog {
+    top: 24%;
+    height: 10rem;
+    line-height: 1.2;
   }
-
-  .alert-box {
-    padding: 20px;
+  .custom-dialog h2 {
+    color: #4a6ea9;
+    font-size: medium;
+    line-height: 1;
+    margin-top: -5px;
   }
-  .alert-title {
-    margin: -8px auto 5px;
+  .custom-dialog p {
+    font-size: small;
   }
-  .alert-message {
-    font-size: 0.9rem;
+  .custom-dialog button {
+    padding: 4px 8px;
+    margin-top: -3px;
   }
-
-  .hidden {
-    display: none;
-  }
-
   .navbar-container {
     padding: 1rem;
   }
@@ -768,33 +738,4 @@ button:hover {
   .testimonial {
     padding: 1.5rem;
   }
-}
-
-/* Contact Form Styles */
-
-/* #formMessage {
-  margin-bottom: 10px;
-  padding: 8px;
-  border-radius: 4px;
-  width: 50%;
-  font-size: 14px;
-} */
-#formMessage {
-  margin-top: 10px;
-  padding: 8px;
-  border-radius: 4px;
-  width: 100%; /* Match form width */
-  font-size: 14px;
-  box-sizing: border-box; /* Ensures padding doesn't break layout */
-  text-align: center;
-}
-
-.success {
-  background: #d4edda;
-  color: #155724;
-}
-
-.error {
-  background: #f8d7da;
-  color: #721c24;
 }
