@@ -1,3 +1,9 @@
+// Newsletter subscription and EmailJS integration
+// This script handles the newsletter subscription form and integrates with EmailJS for contact form submissions.
+// It includes basic validation, error handling, and user feedback.
+// Ensure to replace placeholders with your actual SheetDB and EmailJS credentials.
+
+
 
 (function () {
   const form = document.getElementById('subscription-form');
@@ -76,3 +82,76 @@
     }
   });
 })();
+
+// Contact form submission using EmailJS (Fix Appointment)
+// EmailJS initialization with Public Key
+
+// EmailJS initialization with Public Key here instead of HTML
+(function() {
+  emailjs.init("KKki9S38viM26emph"); // Replace with your EmailJS Public Key
+})();
+
+document.getElementById("inquiryForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+ 
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const message = document.getElementById("message").value.trim();
+  const submitButton = inquiryForm.querySelector("button[type='submit']");
+  const formMessage = document.getElementById("formMessage");
+  
+  submitButton.textContent = "Sending...";
+  submitButton.disabled = true; // Optional: prevent double click
+
+
+  // Reset message display
+  formMessage.textContent = "";
+  formMessage.className = "";
+
+  // Validation
+  if (!name || !email || !phone || !message) {
+    formMessage.textContent = "Please fill in all fields.";
+    formMessage.className = "error";
+    return;
+  }
+
+  // Email format validation
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    formMessage.textContent = "Please enter a valid email address.";
+    formMessage.className = "error";
+    return;
+  }
+
+  // Prepare email data
+  const templateParams = {
+    name: name,
+    email: email,
+    phone: phone,
+    message: message
+  };
+
+  // Send email via EmailJS
+    
+  emailjs.send("service_06x3b2p", "template_6d3k5yd", templateParams)
+    .then(() => {
+      formMessage.textContent = "✅ Your message has been sent successfully!";
+      formMessage.className = "success";
+      submitButton.textContent = "Submit";
+      submitButton.disabled = false; // Re-enable button after sending
+      document.getElementById("inquiryForm").reset();
+    })
+    .catch(() => {
+      formMessage.textContent = "❌ Failed to send message. Please try again.";
+      formMessage.className = "error";
+    });
+
+    // Clear error message after 3 seconds
+    setTimeout(() => {
+      formMessage.textContent = "";
+      formMessage.className = "";
+    }, 3000);
+});
